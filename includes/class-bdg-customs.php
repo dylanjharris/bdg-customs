@@ -11,6 +11,9 @@ if( ! class_exists( 'BDG_Customs' ) ) {
     * Constructor
     */
     public function __construct() {
+      // // optional: Dequeue storefront core styles
+      // add_action( 'wp_enqueue_scripts', array($this,'bdg_child_theme_dequeue_style'), 999 );
+
       // Enqueue styles/scripts
       add_action( 'wp_enqueue_scripts', array( $this, 'bdg_enqueue_styles_scripts'), 999 );
 
@@ -19,6 +22,7 @@ if( ! class_exists( 'BDG_Customs' ) ) {
 
       // Print instead of enqueue
       add_action( 'wp_print_scripts', array( $this, 'bdg_print_scripts_instead_of_enqueue') );
+
 
       // Add custom image sizes
       add_action('after_setup_theme', array( $this,'bdg_custom_image_sizes') );
@@ -32,11 +36,18 @@ if( ! class_exists( 'BDG_Customs' ) ) {
 
       // Modify Storefront
       add_action( 'init', array($this,'bdg_modify_storefront_templates'), 10 );
-      // replace parent/child theme google fonts
+      // // optional: replace parent/child theme google fonts
       // add_filter( 'storefront_google_font_families', array( $this, 'bdg_google_fonts' ), 99 );
-
     }
 
+
+    /*----------------------------------------------djh Oct 30, 2018
+      Dequeue the Storefront Parent theme core CSS
+    ----------------------------------------------*/
+    function bdg_child_theme_dequeue_style() {
+      wp_dequeue_style( 'storefront-style' );
+      wp_dequeue_style( 'storefront-woocommerce-style' );
+    }
 
     /*----------------------------------------------djh Oct 29, 2018
       Enqueue styles/scripts
