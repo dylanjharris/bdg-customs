@@ -30,7 +30,7 @@ if ( ! function_exists('bdg_current_version') ) {
   function bdg_current_version() {
     $version = '1.0.1';
     if ( ! bdg_in_production() ) { // randomize version if not in production
-      return '0.' rand(1,999);
+      return '0.' . rand(1,999);
     } else {
       return $version;
     }
