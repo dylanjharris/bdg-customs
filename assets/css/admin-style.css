@@ -1,0 +1,15 @@
+.example {
+  background: transparent;
+}
+
+.acf-field.acf-accordion .acf-accordion-title {
+  background: #efefef;
+}
+
+.options-title {
+  background-color: #efefef;
+}
+
+body .acf-relationship .list {
+  height: 300px;
+}

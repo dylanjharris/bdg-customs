@@ -1,0 +1,118 @@
+/*----------------------------------------------djh Aug 24, 2018
+  Helper Classes
+----------------------------------------------*/
+pre {
+  width: 100%;
+}
+.hidden-by-default {
+  display: none!important;
+}
+.green {
+  color: $green;
+}
+.orange {
+  color: $orange;
+}
+.blue {
+  color: $blue;
+}
+.red {
+  color: $red;
+}
+.fineprint {
+  font-size: 12px;
+  font-weight: 400;
+  font-style: italic;
+}
+.text-right {
+  text-align: right;
+}
+.text-left {
+  text-align: left;
+}
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-row.nowrap {
+  flex-wrap: nowrap;
+}
+.flex-col-1 {
+  flex: 1;
+}
+.flex-col-2 {
+  flex: 2;
+}
+.flex-columns-1,
+.flex-columns-2,
+.flex-columns-3,
+.flex-columns-4 {
+  margin-bottom: 2%;
+}
+.flex-columns-1 {
+  width: 100%;
+  margin: 0 0 2% 0;
+}
+.flex-columns-2 {
+  width: 100%;
+  margin: 0 0 2% 0;
+  @media only screen and (min-width: 500px) {
+    width: 49%;
+    margin-right: 2%;
+    &:nth-child(2n+2){
+      margin-right: 0;
+    }
+  }
+}
+.flex-columns-3 {
+  width: 100%;
+  margin: 0 0 2% 0;
+  @media only screen and (min-width: 500px) and (max-width: 959px) {
+    width: 49%;
+    margin-right: 2%;
+    &:nth-child(2n+2){
+      margin-right: 0;
+    }
+  }
+  @media only screen and (min-width: 960px) {
+    width: 32%;
+    margin-right: 2%;
+    &:nth-child(3n+3){
+      margin-right: 0;
+    }
+  }
+}
+
+.flex-columns-4 {
+  width: 100%;
+  margin: 0 0 2% 0;
+  @media only screen and (min-width: 500px) and (max-width: 767px) {
+    width: 49%;
+    margin-right: 2%;
+    &:nth-child(2n+2){
+      margin-right: 0;
+    }
+  }
+  @media only screen and (min-width: 768px) and (max-width: 959px) {
+    width: 32%;
+    margin-right: 2%;
+    &:nth-child(3n+3){
+      margin-right: 0;
+    }
+  }
+  @media only screen and (min-width: 960px) {
+    width: 23.5%;
+    margin-right: 2%;
+    &:nth-child(4n+4){
+      margin-right: 0;
+    }
+  }
+}
+
+
+@media print {
+  // .page-break { display: block; page-break-before: auto; }
+  .page-break-before {
+    page-break-before: always;
+  }
+}
