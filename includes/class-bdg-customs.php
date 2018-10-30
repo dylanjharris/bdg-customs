@@ -325,5 +325,5 @@ if( ! class_exists( 'BDG_Customs' ) ) {
 
 
 
-  } // BDG_Customs class
+  } // END BDG_Customs class
 }
