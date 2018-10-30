@@ -33,11 +33,9 @@ if( ! class_exists( 'BDG_Customs' ) ) {
       // Modify Storefront
       add_action( 'init', array($this,'bdg_modify_storefront_templates'), 10 );
       // replace parent/child theme google fonts
-      add_filter( 'storefront_google_font_families', array( $this, 'bdg_google_fonts' ), 99 );
+      // add_filter( 'storefront_google_font_families', array( $this, 'bdg_google_fonts' ), 99 );
 
     }
-
-
 
 
     /*----------------------------------------------djh Oct 29, 2018
@@ -323,7 +321,23 @@ if( ! class_exists( 'BDG_Customs' ) ) {
     }
 
 
-
+    /*----------------------------------------------djh Oct 30, 2018
+      Replaces Storefront/Child google fonts with your own
+    ----------------------------------------------*/
+    /**
+     * @param  array $fonts the desired fonts.
+     * @return array
+     */
+    public function bdg_google_fonts( $fonts ) {
+      if ( is_admin() ) {
+        return;
+      }
+      $fonts = array(
+        'montserrat'  => 'Montserrat:400,400i,700',
+        'oswald'      => 'Oswald:400,700',
+      );
+      return $fonts;
+    }
 
   } // END BDG_Customs class
 }
