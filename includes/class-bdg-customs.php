@@ -40,7 +40,6 @@ if( ! class_exists( 'BDG_Customs' ) ) {
       // add_filter( 'storefront_google_font_families', array( $this, 'bdg_google_fonts' ), 99 );
     }
 
-
     /*----------------------------------------------djh Oct 30, 2018
       Dequeue the Storefront Parent theme core CSS
     ----------------------------------------------*/
